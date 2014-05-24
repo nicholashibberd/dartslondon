@@ -1,5 +1,5 @@
 require 'sinatra'
 
 get '/' do
-  'Welcome to Darts London!'
+  send_file 'index.html'
 end
