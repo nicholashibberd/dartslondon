@@ -1,0 +1,26 @@
+*.swp
+
+# Ignore personal configurations
+.rspec
+.ackrc
+.vimrc
+.rbenv-version
+
+# Ignore bundler config
+/.bundle
+
+# Ignore the default SQLite database.
+/db/*.sqlite3
+
+/db/structure.sql
+
+# Ignore all logfiles and tempfiles.
+/log/*.log
+/tmp
+
+# Ignore ctag files
+gems.tags
+tags
+
+.DS_Store
+.nfs*
