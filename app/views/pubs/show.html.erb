@@ -1,14 +1,6 @@
-<p id="notice"><%= notice %></p>
-
+<h1><%= @pub.name %></h1>
 <p>
-  <strong>Name:</strong>
-  <%= @pub.name %>
-</p>
-
-<p>
-  <strong>Description:</strong>
   <%= @pub.description %>
 </p>
 
-<%= link_to 'Edit', edit_pub_path(@pub) %> |
-<%= link_to 'Back', pubs_path %>
+<%= link_to 'Edit', edit_pub_path(@pub), class: 'btn btn-default' %>
