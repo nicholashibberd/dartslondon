@@ -350,3 +350,63 @@ Started GET "/assets/application.js?body=1" for 10.0.0.224 at 2014-08-13 18:26:4
 
 
 Started GET "/assets/application.css?body=1" for 10.0.0.224 at 2014-08-13 18:26:46 +1000
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreatePubs (20140813115445)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (39.1ms)[0m  [1mCREATE TABLE "pubs" ("id" serial primary key, "name" character varying(255), "description" text, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35mSQL (1.5ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20140813115445"]]
+  [1m[36m (4.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.4ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+
+Started GET "/pubs" for 10.0.0.224 at 2014-08-13 22:00:01 +1000
+  [1m[35mActiveRecord::SchemaMigration Load (1.4ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Processing by PubsController#index as HTML
+  [1m[36mPub Load (1.1ms)[0m  [1mSELECT "pubs".* FROM "pubs"[0m
+  Rendered pubs/index.html.erb within layouts/application (6.8ms)
+  Rendered layouts/_navbar.html.erb (0.1ms)
+Completed 200 OK in 2593ms (Views: 2579.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 10.0.0.224 at 2014-08-13 22:00:04 +1000
+
+
+Started GET "/assets/application.css?body=1" for 10.0.0.224 at 2014-08-13 22:00:04 +1000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 10.0.0.224 at 2014-08-13 22:00:04 +1000
+
+
+Started GET "/assets/jquery.js?body=1" for 10.0.0.224 at 2014-08-13 22:00:04 +1000
+
+
+Started GET "/assets/pubs.js?body=1" for 10.0.0.224 at 2014-08-13 22:00:04 +1000
+
+
+Started GET "/assets/pubs.css?body=1" for 10.0.0.224 at 2014-08-13 22:00:04 +1000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 10.0.0.224 at 2014-08-13 22:00:04 +1000
+
+
+Started GET "/assets/application.js?body=1" for 10.0.0.224 at 2014-08-13 22:00:04 +1000
+
+
+Started GET "/assets/bootstrap.js?body=1" for 10.0.0.224 at 2014-08-13 22:00:04 +1000
+  [1m[36mActiveRecord::SchemaMigration Load (1.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+
+Started GET "/pubs/new" for 10.0.0.224 at 2014-08-13 22:00:32 +1000
+Processing by PubsController#new as HTML
+  Rendered pubs/_form.html.erb (37.3ms)
+  Rendered pubs/new.html.erb within layouts/application (40.0ms)
+  Rendered layouts/_navbar.html.erb (0.7ms)
+Completed 200 OK in 73ms (Views: 60.2ms | ActiveRecord: 3.0ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateRegions (20140816015316)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (12.7ms)[0m  [1mCREATE TABLE "regions" ("id" serial primary key, "name" character varying(255), "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35mSQL (3.8ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20140816015316"]]
+  [1m[36m (3.0ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.4ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
