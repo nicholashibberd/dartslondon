@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140912224243) do
+ActiveRecord::Schema.define(version: 20140913092643) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 20140912224243) do
     t.text     "directions"
     t.text     "rest_of_pub"
     t.text     "beer_selection"
-    t.integer  "easy_to_get_on_board"
+    t.text     "easy_to_get_on_board"
     t.text     "quiz_machine"
   end
 
