@@ -11,17 +11,64 @@
     </div>
   <% end %>
 
-  <div class="form-group">
-    <%= f.label :name %><br>
-    <%= f.text_field :name, class: 'form-control' %>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+        <%= f.label :name %><br>
+        <%= f.text_field :name, class: 'form-control' %>
+      </div>
+    </div>
   </div>
+
+  <div class="row">
+    <div class="col-md-9">
+      <div class="form-group">
+        <%= f.label :address %><br>
+        <%= f.text_field :address, class: 'form-control' %>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="form-group">
+        <%= f.label :region %><br>
+        <%= f.select :region_id, options_from_collection_for_select(@regions, :id, :name, @pub.region_id), {}, class: 'form-control' %>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+        <%= f.label :number_of_dartboards %><br>
+        <%= f.select :number_of_dartboards, [1,2,3,4,5], {}, class: 'form-control' %>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group">
+        <%= f.label :easy_to_get_on_the_board %><br>
+        <%= f.select :easy_to_get_on_board, Pub::EASY_TO_GET_ON_BOARD_OPTIONS, {}, class: 'form-control' %>
+      </div>
+    </div>
+  </div>
+
   <div class="form-group">
     <%= f.label :description %><br>
-    <%= f.text_area :description, class: 'form-control' %>
+    <%= f.text_area :description, class: 'form-control', rows: 10 %>
   </div>
   <div class="form-group">
-    <%= f.label :region %><br>
-    <%= f.select :region_id, options_from_collection_for_select(@regions, :id, :name, @pub.region_id) %>
+    <%= f.label :rest_of_pub %><br>
+    <%= f.text_area :rest_of_pub, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :beer_selection %><br>
+    <%= f.text_area :beer_selection, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :how_to_get_there %><br>
+    <%= f.text_area :directions, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :quiz_machine %><br>
+    <%= f.text_area :quiz_machine, class: 'form-control' %>
   </div>
   <div class="form-group">
     <%= f.submit 'Submit', class: 'btn btn-default' %>

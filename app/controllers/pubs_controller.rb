@@ -69,6 +69,6 @@ class PubsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def pub_params
-      params.require(:pub).permit(:name, :description, :region_id)
+      params.require(:pub).permit(Pub::MASS_ASSIGNABLE_FIELDS)
     end
 end
