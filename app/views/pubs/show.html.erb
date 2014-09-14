@@ -1,6 +1,6 @@
 <% content_for :head do %>
   <script type="text/javascript"
-          src="https://maps.googleapis.com/maps/api/js?key=<%= CREDENTIALS[:google_maps_api_key] %>">
+          src="https://maps.googleapis.com/maps/api/js?key=<%= GOOGLE_MAPS_API_KEY %>">
   </script>
 <% end %>
 <div id="pub-container" data-pub="<%= pub.to_json %>">
@@ -9,13 +9,11 @@
   </div>
 
   <h1><%= pub.name %></h1>
+  <p>
+    <%= pub.address %>
+  </p>
   <div class="row">
-    <div class="col-md-6">
-      <p>
-        <%= pub.address %>
-      </p>
-    </div>
-    <div class="col-md-6">
+    <div class="col-md-12">
       <div id="map_canvas"></div>
     </div>
   </div>
