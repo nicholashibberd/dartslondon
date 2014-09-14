@@ -12,6 +12,7 @@ class Pub < ActiveRecord::Base
     :beer_selection,
     :directions,
     :quiz_machine,
+    :latlng,
   ]
 
   validates :number_of_dartboards, numericality: true
