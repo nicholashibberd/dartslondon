@@ -1,37 +1,51 @@
-<div class="breadcrumb">
-  <%= @pub.region.name %>
+<% content_for :head do %>
+  <script type="text/javascript"
+          src="https://maps.googleapis.com/maps/api/js?key=<%= CREDENTIALS[:google_maps_api_key] %>">
+  </script>
+<% end %>
+<div id="pub-container" data-pub="<%= pub.to_json %>">
+  <div class="breadcrumb">
+    <%= pub.region.name %>
+  </div>
+
+  <h1><%= pub.name %></h1>
+  <div class="row">
+    <div class="col-md-6">
+      <p>
+        <%= pub.address %>
+      </p>
+    </div>
+    <div class="col-md-6">
+      <div id="map_canvas"></div>
+    </div>
+  </div>
+  <p>
+    <%= pub.description %>
+  </p>
+
+  <h3>Easy to get on the board?</h3>
+  <p>
+    <%= pub.easy_to_get_on_board %>
+  </p>
+
+  <h3>Rest of pub</h3>
+  <p>
+    <%= pub.rest_of_pub %>
+  </p>
+
+  <h3>Beer selection</h3>
+  <p>
+    <%= pub.beer_selection %>
+  </p>
+
+  <h3>How to get there</h3>
+  <p>
+    <%= pub.directions %>
+  </p>
+
+  <h3>Quiz machine</h3>
+  <p>
+    <%= pub.quiz_machine %>
+  </p>
+  <%= link_to 'Edit', edit_pub_path(pub), class: 'btn btn-default' %>
 </div>
-
-<h1><%= @pub.name %></h1>
-<p>
-  <%= @pub.address %>
-</p>
-<p>
-  <%= @pub.description %>
-</p>
-
-<h3>Easy to get on the board?</h3>
-<p>
-  <%= @pub.easy_to_get_on_board %>
-</p>
-
-<h3>Rest of pub</h3>
-<p>
-  <%= @pub.rest_of_pub %>
-</p>
-
-<h3>Beer selection</h3>
-<p>
-  <%= @pub.beer_selection %>
-</p>
-
-<h3>How to get there</h3>
-<p>
-  <%= @pub.directions %>
-</p>
-
-<h3>Quiz machine</h3>
-<p>
-  <%= @pub.quiz_machine %>
-</p>
-<%= link_to 'Edit', edit_pub_path(@pub), class: 'btn btn-default' %>

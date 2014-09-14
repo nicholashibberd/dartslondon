@@ -1,5 +1,6 @@
 class PubsController < ApplicationController
   before_action :set_pub, only: [:show, :edit, :update, :destroy]
+  decorates_assigned :pub
 
   # GET /pubs
   # GET /pubs.json
