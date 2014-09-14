@@ -24,3 +24,6 @@ tags
 
 .DS_Store
 .nfs*
+
+# Ignore credentials
+/config/credentials.yml
