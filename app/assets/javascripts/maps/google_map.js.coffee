@@ -10,7 +10,7 @@ class @GoogleMap
 
   _map_options: ->
     center: @latlng
-    zoom: 8
+    zoom: 15
 
   _dom_element: ->
     @element[0]
