@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   before_filter :load_regions
+  before_action :authenticate_user!
 
   def load_regions
     @regions = Region.all
