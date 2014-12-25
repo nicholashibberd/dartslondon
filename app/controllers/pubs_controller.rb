@@ -2,6 +2,8 @@ class PubsController < ApplicationController
   before_action :set_pub, only: [:show, :edit, :update, :destroy]
   decorates_assigned :pub
 
+  before_action :authenticate_user!, except: [:index, :show]
+
   # GET /pubs
   # GET /pubs.json
   def index
