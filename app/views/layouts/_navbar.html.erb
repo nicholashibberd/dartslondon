@@ -23,6 +23,9 @@
           </ul>
         </li>
         <li><a href="/pubs">Pubs</a></li>
+        <% if user_signed_in? %>
+          <li><%= link_to 'Users', '/users' %></li>
+        <% end %>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <% if user_signed_in? %>

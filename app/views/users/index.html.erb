@@ -1,0 +1,24 @@
+<h1>Users</h1>
+
+<%= form_tag approve_users_path do %>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Email</th>
+        <th>Approved</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @users.each do |user| %>
+        <tr>
+          <td><%= user.email %></td>
+          <td><%= check_box_tag 'approved[]', user.id, user.approved? %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <div>
+    <%= submit_tag 'Approve', class: 'btn btn-default' %>
+  </div>
+<% end %>
