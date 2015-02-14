@@ -9,8 +9,13 @@
 </head>
 <body>
   <%= render 'layouts/navbar' %>
-  <div id="background-image"></div>
-  <div id="main-content" class="container">
+  <div class="container">
+    <% if notice.present? %>
+      <div class="alert alert-info"><%= notice %></div>
+    <% end %>
+    <% if alert.present? %>
+      <div class="alert alert-danger"><%= alert %></div>
+    <% end %>
     <%= yield %>
   </div>
 
