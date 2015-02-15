@@ -9,3 +9,12 @@ darts, darts, darts, darts, darts, darts, darts, darts, darts, darts, darts, dar
 darts, darts, darts, darts, darts, darts, darts, darts, darts, darts, darts, darts,
 darts, darts, darts, darts, darts, darts
 </p>
+
+<div id="latest-pub-reviews">
+  <% @pubs.each do |pub| %>
+    <div class="latest-pub-review">
+      <h3><%= pub.name %></h3>
+      <p><%= pub.description %>
+    </div>
+  <% end %>
+</div>
