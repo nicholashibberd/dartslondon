@@ -4,6 +4,8 @@ class PubsController < ApplicationController
 
   before_action :authenticate_user!, except: [:index, :show]
 
+  layout "admin", :only => [:edit, :new]
+
   # GET /pubs
   # GET /pubs.json
   def index
