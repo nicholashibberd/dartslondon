@@ -19,6 +19,29 @@ body {
         color: white;
         text-transform: uppercase;
         text-shadow: 1px 1px 3px black;
+
+        &:hover {
+          color: #e7e7e7;
+        }
+      }
+
+      &.open {
+        a, a:hover, a:focus {
+          background: white;
+          color: black;
+          text-shadow: 1px 1px 3px #999;
+        }
+      }
+
+      ul.dropdown-menu {
+        a {
+          color: black;
+          text-shadow: 1px 1px 3px #999;
+
+          &:hover {
+            background: #e7e7e7;
+          }
+        }
       }
     }
   }
