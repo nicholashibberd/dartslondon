@@ -7,9 +7,11 @@
   <%= csrf_meta_tags %>
   <%= yield(:head) %>
 </head>
-<body id="main">
+<body class="main" id="<%= controller_name %>-<%= controller.action_name %>">
   <%= render 'layouts/navbar' %>
-  <div id="background-image"></div>
+  <div id="background-image">
+    <%= yield :background_image %>
+  </div>
   <div id="main-content" class="container">
     <%= yield %>
   </div>
