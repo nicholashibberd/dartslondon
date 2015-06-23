@@ -2,11 +2,15 @@ class RegionsController < ApplicationController
   before_action :set_region, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index, :show]
 
-  layout "admin", :only => [:edit, :new]
+  layout "admin", :only => [:edit, :new, :admin_index]
 
   # GET /regions
   # GET /regions.json
   def index
+    @regions = Region.all
+  end
+
+  def admin_index
     @regions = Region.all
   end
 
