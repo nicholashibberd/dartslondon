@@ -12,11 +12,13 @@
   <tbody>
     <% @pubs.each do |pub| %>
       <tr>
-        <td><%= pub.name %></td>
+        <td><%= link_to(pub.name, pub) %></td>
         <td><%= pub.description %></td>
+        <% if user_signed_in? %>
         <td><%= link_to 'Show', pub, class: 'btn btn-default' %></td>
         <td><%= link_to 'Edit', edit_pub_path(pub), class: 'btn btn-default' %></td>
         <td><%= link_to 'Destroy', pub, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-default' %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
