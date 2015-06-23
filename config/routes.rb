@@ -6,5 +6,12 @@ Rails.application.routes.draw do
   resources :users, only: :index do
     collection {post :approve}
   end
-  resources :pubs
+  resources :pubs, only: [:show, :index]
+
+  get 'admin', to: 'admin#index'
+  scope :admin do
+    resources :pubs, except: [:show, :index] do
+      get :index, on: :collection, action: 'admin_index'
+    end
+  end
 end
