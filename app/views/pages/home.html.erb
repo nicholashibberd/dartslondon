@@ -14,8 +14,8 @@
 <div id="latest-pub-reviews">
   <% @pubs.each do |pub| %>
     <div class="latest-pub-review">
-      <h3><%= pub.name %></h3>
-      <p><%= pub.description %>
+      <h3><%= link_to(pub.name, pub) %></h3>
+      <p><%= pub.description %></p>
     </div>
   <% end %>
 </div>
