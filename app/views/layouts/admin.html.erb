@@ -8,7 +8,9 @@
   <%= yield(:head) %>
 </head>
 <body>
-  <%= render 'layouts/admin_navbar' %>
+  <% if user_signed_in? %>
+    <%= render 'layouts/admin_navbar' %>
+  <% end %>
   <div class="container">
     <% if notice.present? %>
       <div class="alert alert-info"><%= notice %></div>

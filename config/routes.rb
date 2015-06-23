@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   get 'admin', to: 'admin#index'
   scope :admin do
     resources :pubs, except: [:show, :index] do
-      get :index, on: :collection, action: 'admin_index'
+      get :index, on: :collection, action: 'admin_index', as: 'admin_index'
     end
     resources :regions, except: [:show, :index] do
       get :index, on: :collection, action: 'admin_index', as: 'admin_index'
