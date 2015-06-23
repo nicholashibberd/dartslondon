@@ -37,7 +37,7 @@ class PubsController < ApplicationController
 
     respond_to do |format|
       if @pub.save
-        format.html { redirect_to @pub, notice: 'Pub was successfully created.' }
+        format.html { redirect_to admin_index_pubs_path, notice: 'Pub was successfully created.' }
         format.json { render :show, status: :created, location: @pub }
       else
         format.html { render :new }
@@ -51,7 +51,7 @@ class PubsController < ApplicationController
   def update
     respond_to do |format|
       if @pub.update(pub_params)
-        format.html { redirect_to @pub, notice: 'Pub was successfully updated.' }
+        format.html { redirect_to admin_index_pubs_path, notice: 'Pub was successfully updated.' }
         format.json { render :show, status: :ok, location: @pub }
       else
         format.html { render :edit }
@@ -65,7 +65,7 @@ class PubsController < ApplicationController
   def destroy
     @pub.destroy
     respond_to do |format|
-      format.html { redirect_to pubs_url, notice: 'Pub was successfully destroyed.' }
+      format.html { redirect_to admin_index_pubs_path, notice: 'Pub was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
