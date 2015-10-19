@@ -17,6 +17,6 @@
   <div id="main-content" class="container">
     <%= yield %>
   </div>
-
+  <%= render 'layouts/google_analytics' if Rails.env == 'production' %>
 </body>
 </html>
