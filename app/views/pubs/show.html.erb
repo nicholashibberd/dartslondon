@@ -3,7 +3,7 @@
           src="https://maps.googleapis.com/maps/api/js?key=<%= GOOGLE_MAPS_API_KEY %>">
   </script>
 <% end %>
-<% content_for(:title, "#{pub.name} | DartsLondon") %>
+<% content_for(:title, "#{pub.title_tag || pub.name} | DartsLondon") %>
 
 <div id="pub-container" data-pub="<%= pub.to_json %>">
   <div class="breadcrumb">

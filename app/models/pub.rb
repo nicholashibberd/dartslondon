@@ -14,6 +14,7 @@ class Pub < ActiveRecord::Base
     :directions,
     :quiz_machine,
     :latlng,
+    :title_tag,
   ]
 
   validates :number_of_dartboards, numericality: true
