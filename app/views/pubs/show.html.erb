@@ -5,7 +5,7 @@
 <% end %>
 <% content_for(:title, "#{pub.title_tag || pub.name} | DartsLondon") %>
 
-<div id="pub-container" data-pub="<%= pub.to_json %>">
+<div id="pub-container" data-pub="<%= pub.map_data.to_json %>">
   <div class="breadcrumb">
     <%= pub.region.name %>
   </div>

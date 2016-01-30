@@ -1,9 +1,10 @@
 class PubDecorator < Draper::Decorator
   delegate_all
 
-  def to_json
+  def map_data
     {
+      name: pub.name,
       latlng: pub.latlng,
-    }.to_json
+    }
   end
 end
