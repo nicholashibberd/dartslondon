@@ -18,4 +18,6 @@ Rails.application.routes.draw do
       get :index, on: :collection, action: 'admin_index', as: 'admin_index'
     end
   end
+
+  get 'sitemap.xml', to: 'sitemaps#index', defaults: { format: 'xml' }
 end
