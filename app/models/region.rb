@@ -1,5 +1,7 @@
 class Region < ActiveRecord::Base
   has_many :pubs
+  belongs_to :parent, class_name: 'Region'
+  has_many :children, class_name: 'Region', foreign_key: "parent_id"
 
   def to_param
     slug
@@ -13,5 +15,13 @@ class Region < ActiveRecord::Base
     find do |region|
       region.slug == slug
     end
+  end
+
+  def all_pubs(other_pubs=[])
+    other_pubs.concat(pubs)
+    children.each do |child|
+      child.all_pubs(other_pubs)
+    end
+    other_pubs
   end
 end

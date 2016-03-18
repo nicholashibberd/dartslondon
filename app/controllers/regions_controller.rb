@@ -18,16 +18,18 @@ class RegionsController < ApplicationController
   # GET /regions/1
   # GET /regions/1.json
   def show
-    @pubs = @region.pubs
+    @pubs = @region.all_pubs
   end
 
   # GET /regions/new
   def new
     @region = Region.new
+    @regions = Region.all
   end
 
   # GET /regions/1/edit
   def edit
+    @regions = Region.all
   end
 
   # POST /regions
@@ -78,6 +80,6 @@ class RegionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def region_params
-      params.require(:region).permit(:name, :description, :title_tag)
+      params.require(:region).permit(:name, :description, :title_tag, :parent_id)
     end
 end

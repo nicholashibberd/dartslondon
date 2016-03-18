@@ -28,4 +28,14 @@
   <div class="form-group">
     <%= f.submit 'Submit', class: 'btn btn-default' %>
   </div>
+
+  <div class="row">
+    <div class="col-md-3">
+      <div class="form-group">
+        <%= f.label :parent_region %><br>
+        <%= f.select :parent_id, options_from_collection_for_select(@regions, :id, :name, @region.parent_id), {}, class: 'form-control' %>
+      </div>
+    </div>
+  </div>
+
 <% end %>
