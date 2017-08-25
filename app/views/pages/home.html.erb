@@ -19,12 +19,17 @@
     </div>
   </div>
 
-  <div id="latest-pub-reviews">
-    <% @pubs.each do |pub| %>
-      <div class="latest-pub-review">
-        <h3><%= link_to(pub.name, pub) %></h3>
-        <p><%= pub.description %></p>
-      </div>
-    <% end %>
-  </div>
+  <% @regions.each do |region| %>
+  <h2><%= region.name %> <small>Latest Reviews</small></h2>
+
+    <div id="latest-pub-reviews">
+      <% region.latest_pubs.each do |pub| %>
+        <div class="latest-pub-review">
+          <h3><%= link_to(pub.name, pub) %></h3>
+          <p><%= pub.description %></p>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+
 </div>

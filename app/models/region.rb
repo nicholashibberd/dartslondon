@@ -24,4 +24,8 @@ class Region < ActiveRecord::Base
     end
     other_pubs
   end
+
+  def latest_pubs
+    pubs.take(3)
+  end
 end
