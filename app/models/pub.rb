@@ -18,6 +18,7 @@ class Pub < ActiveRecord::Base
   ]
 
   validates :number_of_dartboards, numericality: true
+  validates :latlng, presence: true, format: { with: /.*,.*/ }
 
   def to_param
     slug
