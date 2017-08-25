@@ -18,7 +18,7 @@ class Pub < ActiveRecord::Base
   ]
 
   validates :number_of_dartboards, numericality: true
-  validates :latlng, presence: true, format: { with: /.*,.*/ }
+  validates :latlng, presence: true, format: { with: /.*,.*/, message: "must be in the format 51.5126578, -0.1391717" }
 
   def to_param
     slug
