@@ -1,8 +1,4 @@
-<% content_for :head do %>
-  <script type="text/javascript"
-          src="https://maps.googleapis.com/maps/api/js?key=<%= GOOGLE_MAPS_API_KEY %>">
-  </script>
-<% end %>
+<%= render "layouts/google_maps" %>
 <% content_for(:title, "#{pub.title_tag || pub.name} | DartsLondon") %>
 
 <div id="pub-container" data-pub="<%= pub.map_data.to_json %>">
