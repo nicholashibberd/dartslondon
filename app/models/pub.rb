@@ -15,6 +15,7 @@ class Pub < ActiveRecord::Base
     :quiz_machine,
     :latlng,
     :title_tag,
+    :score,
   ]
 
   validates :number_of_dartboards, numericality: true
