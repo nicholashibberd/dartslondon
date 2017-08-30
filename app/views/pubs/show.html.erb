@@ -6,6 +6,12 @@
     <%= pub.region.name %>
   </div>
 
+  <% if pub.score %>
+    <div class="score">
+      <%= image_tag "scores/score#{pub.score}.png" %>
+    </div>
+  <% end %>
+
   <h1><%= pub.name %></h1>
   <p>
     <%= pub.address %>
