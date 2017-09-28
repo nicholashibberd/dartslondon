@@ -4,7 +4,8 @@ class PubDecorator < Draper::Decorator
   def map_data
     {
       name: pub.name,
-      latlng: pub.latlng,
+      lat: pub.lat,
+      lng: pub.lng
     }
   end
 end
