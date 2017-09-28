@@ -1,6 +1,7 @@
 class Pub < ActiveRecord::Base
   belongs_to :region
   default_scope { order('created_at DESC') }
+  acts_as_mappable
 
   MASS_ASSIGNABLE_FIELDS = [
     :name,
