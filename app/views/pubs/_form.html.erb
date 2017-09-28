@@ -27,16 +27,10 @@
   </div>
 
   <div class="row">
-    <div class="col-md-9">
+    <div class="col-md-12">
       <div class="form-group">
         <%= f.label :address %><br>
         <%= f.text_field :address, class: 'form-control' %>
-      </div>
-    </div>
-    <div class="col-md-3">
-      <div class="form-group">
-        <%= f.label :map_location %><br>
-        <%= f.text_field :latlng, class: 'form-control' %>
       </div>
     </div>
   </div>
@@ -53,6 +47,20 @@
       <div class="form-group">
         <%= f.label :score %><br>
         <%= f.number_field :score, in: (0..180).to_a, step: 10, class: 'form-control' %>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <div class="form-group">
+        <%= f.label :latitude %><br>
+        <%= f.text_field :lat, class: 'form-control' %>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <div class="form-group">
+        <%= f.label :longitude %><br>
+        <%= f.text_field :lng, class: 'form-control' %>
       </div>
     </div>
   </div>

@@ -14,13 +14,15 @@ class Pub < ActiveRecord::Base
     :beer_selection,
     :directions,
     :quiz_machine,
-    :latlng,
+    :lat,
+    :lng,
     :title_tag,
     :score,
   ]
 
   validates :number_of_dartboards, numericality: true
-  validates :latlng, presence: true, format: { with: /.*,.*/, message: "must be in the format 51.5126578, -0.1391717" }
+  validates :lat, presence: true
+  validates :lng, presence: true
 
   def to_param
     slug
