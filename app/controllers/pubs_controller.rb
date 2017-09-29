@@ -19,6 +19,7 @@ class PubsController < ApplicationController
   # GET /pubs/1
   # GET /pubs/1.json
   def show
+    @nearby = @pub.nearby
   end
 
   # GET /pubs/new

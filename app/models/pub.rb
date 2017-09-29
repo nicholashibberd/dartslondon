@@ -39,6 +39,8 @@ class Pub < ActiveRecord::Base
   end
 
   def nearby
-    Pub.within(5, origin: self)[1..2]
+    Pub.within(5, origin: self).sort_by do |p|
+      p.distance_to(self)
+    end[1..2]
   end
 end

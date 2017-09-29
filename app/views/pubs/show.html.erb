@@ -50,9 +50,11 @@
     <%= pub.quiz_machine %>
   </p>
 
-  <h2>Pubs Nearby</h2>
-  <% pub.nearby.each do |nearby| %>
-    <h3><%= link_to nearby.name, nearby %></h3>
-    <%= nearby.distance_to(pub).round(1) %> miles
+  <% if @nearby.any? %>
+    <h2>Pubs Nearby</h2>
+    <% @nearby.each do |near| %>
+      <h3><%= link_to near.name, near%></h3>
+      <%= near.distance_to(pub).round(1) %> miles
+    <% end %>
   <% end %>
 </div>
