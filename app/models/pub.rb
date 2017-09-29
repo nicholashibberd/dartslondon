@@ -37,4 +37,8 @@ class Pub < ActiveRecord::Base
       pub.slug == slug
     end
   end
+
+  def nearby
+    Pub.within(5, origin: self)[1..2]
+  end
 end

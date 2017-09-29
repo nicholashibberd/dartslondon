@@ -49,4 +49,10 @@
   <p>
     <%= pub.quiz_machine %>
   </p>
+
+  <h2>Pubs Nearby</h2>
+  <% pub.nearby.each do |nearby| %>
+    <h3><%= nearby.name %></h3>
+    <%= nearby.distance_to(pub).round(1) %> miles
+  <% end %>
 </div>
